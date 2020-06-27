@@ -25,4 +25,5 @@
       cdp_policy: cdp_on
       aep: dc2-aep
       lag_type: leaf
+      name: dc2-polgro
       validate_certs: no
