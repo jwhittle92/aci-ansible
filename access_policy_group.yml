@@ -23,4 +23,6 @@
       username: "{{ username }}"
       password: "{{ password }}"
       cdp_policy: cdp_on
+      aep: dc2-aep
+      lag_type: leaf
       validate_certs: no
