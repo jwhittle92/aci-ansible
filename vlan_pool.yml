@@ -27,5 +27,6 @@
       block_name: vlans
       block_start: 10
       block_end: 100
+      pool_allocation_mode: static
       state: present
       validate_certs: no
