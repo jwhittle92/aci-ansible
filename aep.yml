@@ -13,7 +13,7 @@
       host: "{{ inventory_hostname }}"
       username: "{{ username }}"
       password: "{{ password }}"
-      aep: ACI-AEP
+      aep: dc2-aep
       state: present
       validate_certs: no
 
