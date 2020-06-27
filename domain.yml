@@ -19,6 +19,9 @@
       validate_certs: no
   - name: Bind a physical domain to VLAN pool
     aci_domain_to_vlan_pool:
+      host: "{{ inventory_hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
       domain: dc2_phys_domain
       domain_type: phys
       pool: dc2-vlans
