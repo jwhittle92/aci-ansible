@@ -1,0 +1,29 @@
+---
+- name: include creds
+  hosts: aci
+  connection: local
+  gather_facts: false
+  vars_files:
+    creds.yml
+
+  tasks:
+  
+  - name: create vlan pool
+    aci_vlan_pool:
+      host: "{{ inventory_hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+      pool: dc2-vlans
+      pool_allocation_mode: static
+      state: present
+      validate_certs: no
+  - name: add vlan block
+    aci_vlan_pool_encap_block:
+      host: "{{ inventory_hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+      pool: dc2-vlans
+      block_start: 10
+      block_end: 100
+      state: present
+      validate_certs: no
