@@ -17,3 +17,11 @@
       domain_type: phys
       state: present
       validate_certs: no
+  - name: Bind a physical domain to VLAN pool
+    aci_domain_to_vlan_pool:
+      domain: dc2_phys_domain
+      domain_type: phys
+      pool: dc2-vlans
+      pool_allocation_mode: static
+      state: present
+      validate_certs: no 

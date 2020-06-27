@@ -16,4 +16,14 @@
       aep: dc2-aep
       state: present
       validate_certs: no
+  - name: Add AEP to domain binding
+    aci_aep_to_domain:
+      host: "{{ inventory_hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+      aep: dc2-aep
+      domain: dc2_phys_domain
+      domain_type: phys
+      state: present
+      validate_certs: no
 
