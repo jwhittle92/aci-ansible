@@ -23,7 +23,7 @@
       password: "{{ password }}"
       leaf_interface_profile: dc2-ints
       access_port_selector: dc2-ports
-      leaf_port_blk: port 4
+      leaf_port_blk: port-4
       from_port: 4
       to_port: 4
       state: present
