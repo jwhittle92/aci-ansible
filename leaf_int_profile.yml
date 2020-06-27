@@ -29,15 +29,3 @@
       policy_group: dc2-polgro
       state: present
       validate_certs: no
-  - name: Associate an access port block (single port) to an interface selector
-    aci_access_port_block_to_access_port:
-      host: "{{ inventory_hostname }}"
-      username: "{{ username }}"
-      password: "{{ password }}"
-      leaf_interface_profile: dc2-ints
-      access_port_selector: dc2-ports
-      leaf_port_blk: port-4
-      from_port: 4
-      to_port: 4
-      state: present
-      validate_certs: no
