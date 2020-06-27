@@ -2,7 +2,6 @@
 - name: include creds
   hosts: aci
   gather_facts: false
-  connection: local
   vars_files:
     creds.yml
 
@@ -16,4 +15,5 @@
       aep: ACI-AEP
       state: present
       validate_certs: no
+    delegate_to: localhost
 
