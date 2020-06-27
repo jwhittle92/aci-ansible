@@ -13,6 +13,16 @@
       host: "{{ inventory_hostname }}"
       username: "{{ username }}"
       password: "{{ password }}"
-      leaf_profile: dc2-leaves
+      leaf_profile: dc2-l101
       state: present
       validate_certs: no
+  - name: adding a switch policy leaf profile selector associated Node Block range (w/ policy group)
+    aci_switch_leaf_selector:
+      host: "{{ inventory_hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+      leaf_profile: dc2-l101
+      leaf: leaf-101
+      leaf_node_blk: leaf-101
+      from: 101
+      to: 101
