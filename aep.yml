@@ -2,6 +2,7 @@
 - name: include creds
   hosts: aci
   gather_facts: false
+  connection: local
   vars_files:
     creds.yml
 
