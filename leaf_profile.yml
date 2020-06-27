@@ -26,3 +26,13 @@
       leaf_node_blk: leaf-101
       from: 101
       to: 101
+      validate_certs: no
+  - name: Associating an interface selector profile to a switch policy leaf profile
+    aci_interface_selector_to_switch_policy_leaf_profile:
+      host: "{{ inventory_hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+      leaf_profile: dc2-l101
+      interface_selector: dc2-ints
+      state: present
+      validate_certs: no
