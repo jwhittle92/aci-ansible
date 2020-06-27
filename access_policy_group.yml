@@ -16,9 +16,11 @@
       name: cdp_on
       admin_state: yes
       state: present
+      validate_certs: no
   - name: add access policy group
     aci_interface_policy_leaf_policy_group:
       host: "{{ inventory_hostname }}"
       username: "{{ username }}"
       password: "{{ password }}"
       cdp_policy: cdp_on
+      validate_certs: no
