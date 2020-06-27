@@ -1,0 +1,18 @@
+---
+- name: include creds
+  hosts: aci
+  gather_facts: false
+  vars_files:
+    creds.yml
+
+  tasks:
+  
+  - name: add AEP
+    aci_aep:
+      host: aci
+      username: "{{ username }}"
+      password: "{{ password }}"
+      aep: ACI-AEP
+      state: present
+      validate_certs: no
+
