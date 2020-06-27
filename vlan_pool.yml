@@ -17,12 +17,14 @@
       pool_allocation_mode: static
       state: present
       validate_certs: no
+
   - name: add vlan block
     aci_vlan_pool_encap_block:
       host: "{{ inventory_hostname }}"
       username: "{{ username }}"
       password: "{{ password }}"
       pool: dc2-vlans
+      block_name: vlans
       block_start: 10
       block_end: 100
       state: present
