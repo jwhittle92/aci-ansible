@@ -1,0 +1,24 @@
+---
+- name: include creds
+  hosts: aci
+  connection: local
+  gather_facts: false
+  vars_files:
+    creds.yml
+
+  tasks:
+  
+  - name: Create CDP Test Policy
+    aci_interface_policy_cdp:
+      host: "{{ inventory_hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+      name: cdp_on
+      admin_state: yes
+      state: present
+  - name: add access policy group
+    aci_interface_policy_leaf_policy_group:
+      host: "{{ inventory_hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+      cdp_policy: cdp_on
