@@ -1,3 +1,4 @@
 tenant: "DC2"
 vrf: DC2-VRF
+bd-1: web-bd
 

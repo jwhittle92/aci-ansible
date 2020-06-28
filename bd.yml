@@ -1,0 +1,19 @@
+---
+- name: include creds
+  hosts: aci
+  connection: local
+  gather_facts: false
+  vars_files:
+    - creds.yml
+    - vars.yml
+
+  tasks:
+  - name: add BD to VRF
+    aci_bd:
+      host: "{{ inventory_hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+      tenant: "{{ tenant }}"
+      bd: "{{ bd-1 }}"
+      state: present
+      validate_certs: no
