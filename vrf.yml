@@ -1,0 +1,21 @@
+---
+- name: include creds
+  hosts: aci
+  connection: local
+  gather_facts: false
+  vars_files:
+    - creds.yml
+    - vars.yml
+
+  tasks:
+  - name: Add a new VRF to a tenant
+    aci_vrf:
+      host: "{{ inventory_hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"    
+      vrf: "{{ vrf }}"
+      tenant: "{{ tenant }}"
+      policy_control_preference: enforced
+      policy_control_direction: ingress
+      state: present
+      validate_certs: no

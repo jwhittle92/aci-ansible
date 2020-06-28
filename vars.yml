@@ -1,1 +1,3 @@
 tenant: "DC2"
+vrf: DC2-VRF
+
