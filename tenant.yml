@@ -13,6 +13,6 @@
       host: "{{ inventory_hostname }}"
       username: "{{ username }}"
       password: "{{ password }}"
-      tenant: DC2
+      tenant: "{{ tenant }}"
       state: present
       validate_certs: no
