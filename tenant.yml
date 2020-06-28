@@ -4,7 +4,7 @@
   connection: local
   gather_facts: false
   vars_files:
-    creds.yml
+    creds.yml,
     vars.yml
 
   tasks:
