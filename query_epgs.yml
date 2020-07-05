@@ -10,9 +10,9 @@
   tasks:
   - name: Query all EPGs
     aci_epg:
-      host: apic
-      username: admin
-      password: SomeSecretPassword
+      host: "{{ inventory_hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
       state: query
     delegate_to: localhost
     register: query_result
