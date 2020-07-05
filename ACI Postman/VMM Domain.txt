@@ -1,0 +1,83 @@
+
+method: POST
+url: https://{{apic}}/api/node/mo/uni/vmmp-VMware/dom-{{vCenter-Domain-Name}}.json
+{
+    "vmmDomP": {
+        "attributes": {
+            "dn": "uni/vmmp-VMware/dom-{{vCenter-Domain-Name}}",
+            "name": "{{vCenter-Domain-Name}}",
+            "rn": "dom-{{vCenter-Domain-Name}}",
+            "status": "created"
+        },
+        "children": [
+            {
+                "vmmCtrlrP": {
+                    "attributes": {
+                        "dn": "uni/vmmp-VMware/dom-{{vCenter-Domain-Name}}/ctrlr-{{vCenter-Profile-Name}}",
+                        "name": "{{vCenter-Profile-Name}}",
+                        "hostOrIp": "{{vCenter-IP}}",
+                        "rootContName": "{{vCenter-DC}}",
+                        "rn": "ctrlr-{{vCenter-Profile-Name}}",
+                        "status": "created"
+                    },
+                    "children": [
+                        {
+                            "vmmRsAcc": {
+                                "attributes": {
+                                    "tDn": "uni/vmmp-VMware/dom-{{vCenter-Domain-Name}}/usracc-{{vCenter-Creds}}",
+                                    "status": "created"
+                                },
+                                "children": []
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "infraRsVlanNs": {
+                    "attributes": {
+                        "tDn": "uni/infra/vlanns-{{vCenter-VLAN-Pool}}-dynamic",
+                        "status": "created"
+                    },
+                    "children": []
+                }
+            },
+            {
+                "vmmUsrAccP": {
+                    "attributes": {
+                        "dn": "uni/vmmp-VMware/dom-{{vCenter-Domain-Name}}/usracc-{{vCenter-Creds}}",
+                        "name": "{{vCenter-Creds}}",
+                        "usr": "{{vCenter-Username}}",
+                        "pwd": "{{vCenter-Password}}",
+                        "rn": "usracc-{{vCenter-Creds}}",
+                        "status": "created"
+                    },
+                    "children": []
+                }
+            },
+            {
+                "vmmVSwitchPolicyCont": {
+                    "attributes": {
+                        "dn": "uni/vmmp-VMware/dom-{{vCenter-Domain-Name}}/vswitchpolcont",
+                        "status": "created,modified"
+                    },
+                    "children": []
+                }
+            }
+        ]
+    }
+}
+
+
+Vars:
+
+vCenter-Domain-Name
+vCenter-Profile-Name
+vCenter-DC
+vCenter-VLAN-Pool
+vCenter-Creds
+vCenter-Username
+vCenter-Password
+vCenter-IP
+
+VLAN Pool Name - [dCloud_VLAN_Pool]

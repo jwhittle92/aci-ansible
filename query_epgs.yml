@@ -1,13 +1,14 @@
 
 ---
 - name: Query EPGs in given tenant
-  hosts: apic
+  hosts: aci
   connection: local
   gather_facts: false
   vars_files:
     creds.yml
 
   tasks:
+  
   - name: Query all EPGs
     aci_epg:
       host: "{{ inventory_hostname }}"
