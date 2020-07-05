@@ -1,7 +1,7 @@
 
 ---
 - name: Query EPGs in given tenant
-  hosts: aci
+  hosts: apic
   connection: local
   gather_facts: false
   vars_files:
