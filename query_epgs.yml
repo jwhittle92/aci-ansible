@@ -18,3 +18,8 @@
       validate_certs: no
     delegate_to: localhost
     register: query_result
+
+  - name: print stdout
+    debug:
+      var: query_result
+    
