@@ -8,12 +8,13 @@
     creds.yml
 
   tasks:
-  
+
   - name: Query all EPGs
     aci_epg:
       host: "{{ inventory_hostname }}"
       username: "{{ username }}"
       password: "{{ password }}"
       state: query
+      validate_certs: no
     delegate_to: localhost
     register: query_result
