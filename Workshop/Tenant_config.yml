@@ -44,7 +44,7 @@
       bd: "{{ item.bd }}"
       state: "{{ state }}"
     loop: 
-    - "{{ epgs }}"
+    - "{{ epgs_bds }}"
 
   - name: Create EPGs
     cisco.aci.aci_epg:
@@ -54,4 +54,4 @@
       epg: "{{ item.epg }}"
       bd: "{{ item.bd }}"
       state: "{{ state }}"
-    loop: "{{ epgs }}"
+    loop: "{{ epgs_bds }}"

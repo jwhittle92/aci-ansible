@@ -7,7 +7,7 @@ tenants:
 app_profile: web_app
 vrf: production
 
-epgs:
+epgs_bds:
 - { tenant: "Learning_Tenant_1", bd: "Web_BD", epg: "Web" }
 - { tenant: "Learning_Tenant_1", bd: "App_BD", epg: "App"}
 - { tenant: "Learning_Tenant_1", bd: "DB_BD", epg: "DB" }
