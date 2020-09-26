@@ -39,7 +39,7 @@
   - name: Create BDs
     cisco.aci.aci_bd:
       <<: *login
-      vrf: "{{ vrf }}"
+      vrf: "{{ item.vrf }}"
       tenant: "{{ item.tenant }}"
       bd: "{{ item.bd }}"
       state: "{{ state }}"
