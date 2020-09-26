@@ -43,11 +43,12 @@
       tenant: "{{ item.tenant }}"
       bd: "{{ item.bd }}"
       state: "{{ state }}"
-    loop: "{{ bridge_domains }}"
+    loop: "{{ epgs }}"
 
   - name: Create EPGs
     cisco.aci.aci_epg:
       <<: *login
+      tenant: "{{ item.tenant }}"
       ap: "{{ app_profile }}"
       epg: "{{ item.epg }}"
       bd: "{{ item.bd }}"
