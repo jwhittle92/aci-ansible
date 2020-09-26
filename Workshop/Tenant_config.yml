@@ -39,12 +39,11 @@
   - name: Create BDs
     cisco.aci.aci_bd:
       <<: *login
-      vrf: "{{ item.vrf }}"
+      vrf: "{{ vrf }}"
       tenant: "{{ item.tenant }}"
       bd: "{{ item.bd }}"
       state: "{{ state }}"
-    loop: 
-    - "{{ epgs_bds }}"
+    loop:  "{{ epgs_bds }}"
 
   - name: Create EPGs
     cisco.aci.aci_epg:
