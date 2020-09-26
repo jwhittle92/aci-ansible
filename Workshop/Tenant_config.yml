@@ -1,0 +1,21 @@
+---
+- name: Configure UCS SAN policies
+  hosts: apic
+  connection: local
+  gather_facts: False
+  vars:
+    creds: &login
+      host: "{{ inventory_hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+
+
+  tasks:
+
+  - name: Create Tenants
+    cisco.aci.aci_tenant:
+      <<: *login
+      tenant: {{ item }}
+      state: present
+    loop: "{{ tenants }}"
+
