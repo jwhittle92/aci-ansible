@@ -7,14 +7,6 @@ tenants:
 app_profile: web_app
 vrf: production
 
-bridge_domains:
-- { tenant: "Learning_Tenant_1", bd: "Web_BD" }
-- { tenant: "Learning_Tenant_1", bd: "App_BD" }
-- { tenant: "Learning_Tenant_1", bd: "DB_BD" }
-- { tenant: "Learning_Tenant_2", bd: "Web_BD" }
-- { tenant: "Learning_Tenant_2", bd: "App_BD" }
-- { tenant: "Learning_Tenant_2", bd: "DB_BD" }
-
 epgs:
 - { tenant: "Learning_Tenant_1", bd: "Web_BD", epg: "Web" }
 - { tenant: "Learning_Tenant_1", bd: "App_BD", epg: "App"}
