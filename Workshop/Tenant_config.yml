@@ -15,7 +15,7 @@
   - name: Create Tenants
     cisco.aci.aci_tenant:
       <<: *login
-      tenant: {{ item }}
+      tenant: "{{ item }}"
       state: present
     loop: "{{ tenants }}"
 
