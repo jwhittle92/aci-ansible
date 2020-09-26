@@ -26,4 +26,21 @@
       tenant: "{{ item }}"
       ap: "{{ app_profile }}"
       state: "{{ state }}"
+    loop: "{{ tenants }}"
 
+  - name: Create VRF
+    cisco.aci.aci_vrf:
+      <<: *login
+      vrf: "{{ vrf }}"
+      tenant: "{{ item }}"
+      state: "{{ state }}"
+    loop: "{{ tenants }}"
+
+  - name: Create BDs
+    cisco.aci.aci_bd:
+      <<: *login
+      vrf: "{{ vrf }}"
+      tenant: "{{ item.tenant }}"
+      bd: "{{ item.bd }}"
+      state: "{{ state }}"
+    loop: "{{ bridge_domains }}"
