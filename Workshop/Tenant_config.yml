@@ -40,11 +40,10 @@
     cisco.aci.aci_bd:
       <<: *login
       vrf: "{{ vrf }}"
-      tenant: "{{ item }}"
+      tenant: "{{ item.tenant }}"
       bd: "{{ item.bd }}"
       state: "{{ state }}"
-    loop:
-    - "{{ tenants }}" 
+    loop: 
     - "{{ epgs }}"
 
   - name: Create EPGs
