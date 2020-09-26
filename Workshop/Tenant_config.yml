@@ -8,6 +8,7 @@
       host: "{{ inventory_hostname }}"
       username: "{{ username }}"
       password: "{{ password }}"
+      validate_certs: no
 
 
   tasks:
