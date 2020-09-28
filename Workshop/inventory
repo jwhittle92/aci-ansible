@@ -4,4 +4,3 @@ sandboxapicdc.cisco.com
 [apic:vars]
 username="admin"
 password="ciscopsdt"
-
