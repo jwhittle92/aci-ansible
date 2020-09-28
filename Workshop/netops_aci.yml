@@ -1,5 +1,5 @@
 ---
-- name: Configure UCS SAN policies
+- name: Configure ACI Tenant Policies
   hosts: apic
   connection: local
   gather_facts: False
