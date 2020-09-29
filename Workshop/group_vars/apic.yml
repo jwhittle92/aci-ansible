@@ -1,8 +1,6 @@
-state: present
+tenant: Student_Tenant
 
-tenants:
-- Learning_Tenant_1
-- Learning_Tenant_2
+
 
 app_profile: web_app
 vrf: production

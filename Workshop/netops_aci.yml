@@ -16,9 +16,8 @@
   - name: Create Tenants
     cisco.aci.aci_tenant:
       <<: *login
-      tenant: "{{ item }}"
-      state: "{{ state }}"
-    loop: "{{ tenants }}"
+      tenant: "{{ tenant }}"
+      state: "present"
 
   - name: Create App Profile
     cisco.aci.aci_ap:
