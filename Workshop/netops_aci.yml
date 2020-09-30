@@ -12,17 +12,9 @@
 
 
   tasks:
-- name: Add a new tenant
-  cisco.aci.aci_tenant:
-    host: apic
-    username: admin
-    password: SomeSecretPassword
-    tenant: production
-    description: Production tenant
-    state: present
-  delegate_to: localhost
-
+    
   - name: Create Tenants
     cisco.aci.aci_tenant:
       <<: *login
       tenant: "{{ tenant }}"
+      state: "present"
