@@ -12,9 +12,8 @@
 
 
   tasks:
-    
+
   - name: Create Tenants
     cisco.aci.aci_tenant:
       <<: *login
       tenant: "{{ tenant }}"
-      state: "present"
