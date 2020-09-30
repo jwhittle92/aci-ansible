@@ -1,8 +1,12 @@
-tenant: Student_Tenant
+state: present
+
+tenants:
+- Learning_Tenant_1
+- Learning_Tenant_2
 
 
 
-app_profile: web_app
+app_profile: db_app
 vrf: production
 
 epgs_bds:
