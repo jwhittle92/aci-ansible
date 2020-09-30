@@ -1,7 +1,5 @@
 tenant: Student_Tenant
 
-
-
 app_profile: db_app
 vrf: production
 
