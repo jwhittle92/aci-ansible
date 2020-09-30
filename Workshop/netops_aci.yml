@@ -12,45 +12,17 @@
 
 
   tasks:
+- name: Add a new tenant
+  cisco.aci.aci_tenant:
+    host: apic
+    username: admin
+    password: SomeSecretPassword
+    tenant: production
+    description: Production tenant
+    state: present
+  delegate_to: localhost
 
   - name: Create Tenants
     cisco.aci.aci_tenant:
       <<: *login
-      tenant: "{{ item }}"
-      state: "present"
-    loop: "{{ tenants }}"
-
-  - name: Create App Profile
-    cisco.aci.aci_ap:
-      <<: *login
-      tenant: "{{ item }}"
-      ap: "{{ app_profile }}"
-      state: "{{ state }}"
-    loop: "{{ tenants }}"
-
-  - name: Create VRF
-    cisco.aci.aci_vrf:
-      <<: *login
-      vrf: "{{ vrf }}"
-      tenant: "{{ item }}"
-      state: "{{ state }}"
-    loop: "{{ tenants }}"
-
-  - name: Create BDs
-    cisco.aci.aci_bd:
-      <<: *login
-      vrf: "{{ vrf }}"
-      tenant: "{{ item.tenant }}"
-      bd: "{{ item.bd }}"
-      state: "{{ state }}"
-    loop:  "{{ epgs_bds }}"
-
-  - name: Create EPGs
-    cisco.aci.aci_epg:
-      <<: *login
-      tenant: "{{ item.tenant }}"
-      ap: "{{ app_profile }}"
-      epg: "{{ item.epg }}"
-      bd: "{{ item.bd }}"
-      state: "{{ state }}"
-    loop: "{{ epgs_bds }}"
+      tenant: "{{ tenant }}"
