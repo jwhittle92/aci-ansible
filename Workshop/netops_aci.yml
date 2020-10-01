@@ -17,3 +17,9 @@
     cisco.aci.aci_tenant:
       <<: *login
       tenant: "{{ tenant }}"
+
+  - name: Create VRF
+   cisco.aci.aci_vrf:
+     <<: *login
+     vrf: "{{ vrf }}"
+     tenant: "{{ tenant }}"

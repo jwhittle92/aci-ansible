@@ -1,12 +1,20 @@
 tenant: Student_Tenant
-
-app_profile: db_app
 vrf: production
 
-epgs_bds:
-- { tenant: "Learning_Tenant_1", bd: "Web_BD", epg: "Web" }
-- { tenant: "Learning_Tenant_1", bd: "App_BD", epg: "App"}
-- { tenant: "Learning_Tenant_1", bd: "DB_BD", epg: "DB" }
-- { tenant: "Learning_Tenant_2", bd: "Web_BD", epg: "Web" }
-- { tenant: "Learning_Tenant_2", bd: "App_BD", epg: "App" }
-- { tenant: "Learning_Tenant_2", bd: "DB_BD", epg: "DB" }
+
+
+
+app_profile: db_app
+
+bridge_domains:
+
+- { bd: "Web_BD", gateway: "10.0.1.1", epg: "Web" }
+- { bd: "App_BD", gateway: "10.0.2.1", epg: "App"}
+- { bd: "DB_BD", gateway: "10.0.3.1", epg: "DB" }
+
+
+epgs:
+
+- { bd: "Web_BD", gateway: "10.0.1.1", epg: "Web" }
+- { bd: "App_BD", gateway: "10.0.2.1", epg: "App"}
+- { bd: "DB_BD", gateway: "10.0.3.1", epg: "DB" }
