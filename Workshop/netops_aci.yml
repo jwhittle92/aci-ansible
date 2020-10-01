@@ -32,4 +32,5 @@
       bd: "{{ item.bd }}"
       gw: "{{ item.gateway }}"
       mask: 24
-    loop: bridge_domains
+    loop:
+      - bridge_domains
