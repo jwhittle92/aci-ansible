@@ -37,7 +37,6 @@
     cisco.aci.aci_bd_subnet:
       <<: *login
       tenant: "{{ tenant }}"
-      vrf: "{{ vrf }}"
       bd: "{{ item.bd }}"
       gateway: "{{ item.bd }}"
       mask: 24
