@@ -2,15 +2,6 @@ tenant: Student_Tenant
 vrf: production
 
 bridge_domains:
-- { bd: "Web_BD", gateway: "10.0.1.1", epg: "Web" }
-- { bd: "App_BD", gateway: "10.0.2.1", epg: "App"}
-- { bd: "DB_BD", gateway: "10.0.3.1", epg: "DB" }
-
-
-epgs:
-- { bd: "Web_BD", gateway: "10.0.1.1", epg: "Web" }
-- { bd: "App_BD", gateway: "10.0.2.1", epg: "App"}
-- { bd: "DB_BD", gateway: "10.0.3.1", epg: "DB" }
-
-
-app_profile: db_app
+- Web_BD
+- App_DB
+- DB_BD
