@@ -38,7 +38,7 @@
       <<: *login
       tenant: "{{ tenant }}"
       bd: "{{ item.bd }}"
-      gateway: "{{ item.bd }}"
+      gateway: "{{ item.gateway }}"
       mask: 24
     loop:
       "{{ bridge_domains }}"
