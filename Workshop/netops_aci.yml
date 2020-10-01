@@ -23,3 +23,13 @@
      <<: *login
      vrf: "{{ vrf }}"
      tenant: "{{ tenant }}"
+
+  - name: Create BDs
+    cisco.aci.aci_bd:
+      <<: *login
+      tenant: "{{ tenant }}"
+      vrf: "{{ vrf }}"
+      bd: "{{ item.bd }}"
+      gw: "{{ item.gateway }}"
+      mask: 24
+    loop: bridge_domains
