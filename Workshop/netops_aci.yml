@@ -33,4 +33,4 @@
       gw: "{{ item.gateway }}"
       mask: 24
     loop:
-      - bridge_domains
+      - "{{ bridge_domains }}"
