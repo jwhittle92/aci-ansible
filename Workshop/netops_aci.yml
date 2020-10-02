@@ -29,16 +29,6 @@
       <<: *login
       tenant: "{{ tenant }}"
       vrf: "{{ vrf }}"
-      bd: "{{ item.bd }}"
-    loop:
-      "{{ bridge_domains }}"
-
-  - name: Create BD Subnets
-    cisco.aci.aci_bd_subnet:
-      <<: *login
-      tenant: "{{ tenant }}"
-      bd: "{{ item.bd }}"
-      gateway: "{{ item.gateway }}"
-      mask: 24
+      bd: "{{ item }}"
     loop:
       "{{ bridge_domains }}"
