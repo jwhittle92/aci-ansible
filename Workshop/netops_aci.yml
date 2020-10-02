@@ -33,12 +33,22 @@
     loop:
       "{{ bridge_domains }}"
 
-  - name: Query all controllers system information
+  - name: Query tenant status
     cisco.aci.aci_tenant:
       <<: *login
       tenant: "{{ tenant }}"
       state: query
-    register: sys
+    register: tenant_query
+
+  - name: Create BDs
+    cisco.aci.aci_bd:
+      <<: *login
+      tenant: "{{ tenant }}"
+      vrf: "{{ vrf }}"
+      bd: "{{ item  }}"
+    loop:
+      "{{ bridge_domains }}"
+    register: bd_query
 
   - name: Print debug
-    debug: msg="{{ sys }}"
+    debug: msg="{{ tenant_query }}"
