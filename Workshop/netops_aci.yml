@@ -37,3 +37,9 @@
     cisco.aci.aci_system:
       <<: *login
       state: query
+    register: sys
+
+  - name: Print debug
+    debug:
+      var: sys
+      verbosity: 2
