@@ -10,5 +10,5 @@ bridge_domains:
 
 bd_subnets:
   - { bd: "Web_BD", gw: "10.0.1.1" }
-  - { bd: "App_BD", gw: "10.2.1.1"}
+  - { bd: "App_BD", gw: "10.0.2.1" }
   - { bd: "DB_BD", gw: "10.0.3.1" }
