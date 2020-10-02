@@ -40,6 +40,4 @@
     register: sys
 
   - name: Print debug
-    debug:
-      var: sys
-      verbosity: 2
+    debug: msg="{{ sys.stdout }}"
