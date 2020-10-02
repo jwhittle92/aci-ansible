@@ -8,7 +8,7 @@ bridge_domains:
 - DB_BD
 
 
-epgs:
-  - { bd: "Web_BD", epg: "Web" }
-  - { bd: "App_BD", epg: "App"}
-  - { bd: "DB_BD", epg: "DB" }  
+bd_subnets:
+  - { bd: "Web_BD", gw: "10.0.1.1" }
+  - { bd: "App_BD", gw: "10.2.1.1"}
+  - { bd: "DB_BD", gw: "10.0.3.1" }
