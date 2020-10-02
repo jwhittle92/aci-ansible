@@ -29,6 +29,11 @@
       <<: *login
       tenant: "{{ tenant }}"
       vrf: "{{ vrf }}"
-      bd: "{{ item }}"
+      bd: "{{ item  }}"
     loop:
       "{{ bridge_domains }}"
+
+  - name: Query all controllers system information
+    cisco.aci.aci_system:
+      <<: *login
+      state: query
