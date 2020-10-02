@@ -75,7 +75,7 @@
      vrf: "{{ vrf }}"
      tenant: "{{ tenant }}"
      state: query
-   register: vrf_query
+    register: vrf_query
 
   - name: Query BDs
     cisco.aci.aci_bd:
