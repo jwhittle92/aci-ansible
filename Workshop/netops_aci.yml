@@ -34,10 +34,11 @@
       "{{ bridge_domains }}"
 
   - name: Query all controllers system information
-    cisco.aci.aci_system:
+    cisco.aci.aci_tenant:
       <<: *login
+      tenant: "{{ tenant }}"
       state: query
     register: sys
 
   - name: Print debug
-    debug: msg="{{ sys.stdout }}"
+    debug: msg="{{ sys }}"
