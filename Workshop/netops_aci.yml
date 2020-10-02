@@ -50,5 +50,4 @@
       "{{ bridge_domains }}"
     register: tenant_query
 
-  - name: Print debug
-    debug: msg="{{ tenant_query }}"
+  -  debug: msg="{{ tenant_query }}"
