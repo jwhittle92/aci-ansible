@@ -87,6 +87,27 @@
       "{{ bridge_domains }}"
     register: bd_query
 
+  - name: Create App Profile
+    cisco.aci.aci_ap:
+      <<: *login
+      tenant: "{{ tenant }}"
+      ap: "{{ app_profile }}"
+    register: ap_query
+
+  - name: Create EPGs
+    cisco.aci.aci_epg:
+      <<: *login
+      tenant: "{{ tenant }}"
+      ap: "{{ app_profile }}"
+      epg: "{{ item.epg }}"
+      bd: "{{ item.bd }}"
+    loop:
+      "{{ epgs }}"
+    register: epg_query
+
+
   -  debug: msg="{{ tenant_query }}"
   -  debug: msg="{{ vrf_query }}"
   -  debug: msg="{{ bd_query }}"
+  -  debug: msg="{{ ap_query }}"
+  -  debug: msg="{{ epg_query }}"
