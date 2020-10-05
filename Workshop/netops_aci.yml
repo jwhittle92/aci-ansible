@@ -59,12 +59,18 @@
     loop:
       "{{ epgs }}"
 
+  - name: Create Filter
+    cisco.aci.aci_filter:
+      <<: *login
+      tenant: "{{ tenant }}"
+      filter: "{{ filter }}"
+
   - name: Create Filter Entry
     cisco.aci.aci_filter_entry:
       <<: *login
       tenant: "{{ tenant }}"
       entry: "{{ entry }}"
-      ether_name: ip
-      ip_protocol: tcp
-      dst_port: 22
+      ether_type: "{{ ether_type }}"
+      ip_protocol: "{{ protocol }}"
+      dst_port: "{{ port }}"
       filter: "{{ filter }}"

@@ -19,5 +19,9 @@ epgs:
   - { epg: "App", bd: "App_BD"}
   - { epg: "DB", bd: "DB_BD"}
 
-entry: SSH
 filter: SSH_filter
+
+entry: SSH
+ether_type: ip
+protocol: tcp
+port: 22
