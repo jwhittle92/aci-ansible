@@ -59,8 +59,8 @@
     loop:
       "{{ epgs }}"
 
-  - name: Add a new contract
-   cisco.aci.aci_contract:
+  - name: Create Contract
+    cisco.aci.aci_contract:
      <<: *login
      tenant: "{{ tenant }}"
      contract: "{{ contract }}"
