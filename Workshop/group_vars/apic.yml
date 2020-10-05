@@ -18,4 +18,6 @@ epgs:
   - { epg: "Web", bd: "Web_BD"}
   - { epg: "App", bd: "App_BD"}
   - { epg: "DB", bd: "DB_BD"}
-  
+
+entry: SSH
+filter: SSH_filter
