@@ -50,7 +50,7 @@
       ap: "{{ app_profile }}"
 
   - name: Create EPGs
-    cisco.aci.aci_ap:
+    cisco.aci.aci_epg:
       <<: *login
       tenant: "{{ tenant }}"
       ap: "{{ app_profile }}"
