@@ -19,9 +19,13 @@ epgs:
   - { epg: "App", bd: "App_BD"}
   - { epg: "DB", bd: "DB_BD"}
 
+contract: app_to_db
+
+
+
 filter: SSH_filter
 
 entry: SSH
 ether_type: ip
 protocol: tcp
-port: 22
+port: "22"
