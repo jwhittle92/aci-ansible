@@ -48,3 +48,13 @@
       <<: *login
       tenant: "{{ tenant }}"
       ap: "{{ app_profile }}"
+
+  - name: Create EPGs
+    cisco.aci.aci_ap:
+      <<: *login
+      tenant: "{{ tenant }}"
+      ap: "{{ app_profile }}"
+      epg: "{{ item.epg }}"
+      bd: "{{ item.bd }}"
+    loop:
+      "{{ epgs }}"

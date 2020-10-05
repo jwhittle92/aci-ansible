@@ -13,3 +13,9 @@ bd_subnets:
   - { bd: "DB_BD", gw: "10.0.3.1" }
 
 app_profile: web_app
+
+epgs:
+  - { epg: "Web", bd: "Web_BD"}
+  - { epg: "App", bd: "App_BD"}
+  - { epg: "DB", bd: "DB_BD"}
+  
