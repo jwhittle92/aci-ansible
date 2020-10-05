@@ -42,3 +42,9 @@
       mask: 24
     loop:
       "{{ bd_subnets }}"
+
+  - name: Create Application Profile
+    cisco.aci.aci_ap:
+      <<: *login
+      tenant: "{{ tenant }}"
+      ap: "{{ app_profile }}"

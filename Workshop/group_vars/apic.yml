@@ -1,6 +1,5 @@
 tenant: Student_Tenant
 vrf: production
-app_profile: web_app
 
 bridge_domains:
 - Web_BD
@@ -12,3 +11,5 @@ bd_subnets:
   - { bd: "Web_BD", gw: "10.0.1.1" }
   - { bd: "App_BD", gw: "10.0.2.1" }
   - { bd: "DB_BD", gw: "10.0.3.1" }
+
+app_profile: web_app
