@@ -65,12 +65,12 @@
      tenant: "{{ tenant }}"
      contract: "{{ contract }}"
 
-- name: Add a new contract subject
-  cisco.aci.aci_contract_subject:
-    <<: *login
-    tenant: "{{ tenant }}"
-    contract: "{{ contract }}"
-    subject: "{{ subject }}"
+  - name: Create Subject
+    cisco.aci.aci_contract_subject:
+      <<: *login
+      tenant: "{{ tenant }}"
+      contract: "{{ contract }}"
+      subject: "{{ subject }}"
 
   - name: Create Filter
     cisco.aci.aci_filter:
