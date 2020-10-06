@@ -96,7 +96,7 @@
       subject: "{{ subject}}"
       filter: "{{ filter }}"
 
-  - name: Add a new contract to EPG binding
+  - name: Associate Contract to EPG
     cisco.aci.aci_epg_to_contract:
       <<: *login
       tenant: "{{ tenant }}"
