@@ -22,8 +22,6 @@ epgs:
 contract: app_to_db
 subject: SSH_subject
 
-
-
 filter: SSH_filter
 
 entry: SSH

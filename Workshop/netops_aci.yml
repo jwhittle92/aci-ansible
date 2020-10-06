@@ -87,3 +87,11 @@
       ip_protocol: "{{ protocol }}"
       dst_port: "{{ port }}"
       filter: "{{ filter }}"
+
+  - name: Associate subject to filter
+    cisco.aci.aci_contract_subject_to_filter:
+      <<: *login
+      tenant: "{{ tenant }}"
+      contract: "{{ contract }}"
+      subject: "{{ subject}}"
+      filter: "{{ filter }}"
