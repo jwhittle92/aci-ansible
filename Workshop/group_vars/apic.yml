@@ -20,6 +20,7 @@ epgs:
   - { epg: "DB", bd: "DB_BD"}
 
 contract: app_to_db
+subject: SSH_subject
 
 
 
