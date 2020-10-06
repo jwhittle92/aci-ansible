@@ -99,10 +99,10 @@
   - name: Add a new contract to EPG binding
     cisco.aci.aci_epg_to_contract:
       <<: *login
-      tenant: anstest
-      ap: anstest
-      epg: anstest
-      contract: anstest_http
-      contract_type: provider
+      tenant: "{{ tenant }}"
+      ap: "{{ app_profile }}"
+      epg: "{{ item.epg }}"
+      contract: "{{ contract }}"
+      contract_type: "{{ item.type }}"
     loop:
       "{{ epg_contracts }}"
