@@ -28,3 +28,7 @@ entry: SSH
 ether_type: ip
 protocol: tcp
 port: "22"
+
+epg_contracts:
+  - { epg: "App", type: "consumer"}
+  - { epg: "DB", type: "provider"}
