@@ -8,13 +8,13 @@
 
   - name: Add Leaf to APIC
     cisco.aci.aci_rest:
-    host: "{{ inventory_hostname }}"
-    username: "{{ username }}"
-    password: "{{ password }}"
-    validate_certs: no
-    method: post
-    path: /api/node/mo/uni/controller/nodeidentpol/nodep-aa.json
-    content: {
+      host: "{{ inventory_hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+      validate_certs: no
+      method: post
+      path: /api/node/mo/uni/controller/nodeidentpol/nodep-aa.json
+      content: {
   "fabricNodeIdentP": {
     "attributes": {
       "dn": "uni/controller/nodeidentpol/nodep-aa",
