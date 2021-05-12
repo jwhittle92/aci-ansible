@@ -10,10 +10,10 @@
   tasks:
   
   - name: Add a new tenant
-    aci_tenant:
+    cisco.aci.aci_tenant:
       host: "{{ inventory_hostname }}"
       username: "{{ username }}"
       password: "{{ password }}"
-      tenant: "{{ tenant }}"
+      tenant: "cisco"
       state: present
       validate_certs: no
