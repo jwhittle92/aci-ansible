@@ -1,6 +1,6 @@
 ---
 - name: include creds
-  hosts: aci
+  hosts: apic
   connection: local
   gather_facts: false
   vars_files:
