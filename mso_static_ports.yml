@@ -1,0 +1,27 @@
+---
+- name: MSO Config
+  hosts: mso
+  gather_facts: no
+  vars:
+  creds: &login
+    host: "{{ inventory_hostname }}"
+    username: "{{ username }}"
+    password: "{{ password }}"
+    validate_certs: no
+    state: present
+
+  tasks:
+    
+    - name: Add a new static port to a site EPG
+      cisco.mso.mso_schema_site_anp_epg_staticport:
+        schema: Schema1
+        site: Site1
+        template: Template1
+        anp: ANP1
+        epg: EPG1
+        type: port
+        pod: pod-1
+        leaf: 101
+        path: eth1/1
+        vlan: 126
+        deployment_immediacy: immediate
