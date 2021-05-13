@@ -14,11 +14,11 @@
     
     - name: Add a new static port to a site EPG
       cisco.mso.mso_schema_site_anp_epg_staticport:
-        schema: Schema1
-        site: Site1
-        template: Template1
-        anp: ANP1
-        epg: EPG1
+        schema: DevNet
+        site: Devnet_APIC
+        template: Site-1
+        anp: Chaos
+        epg: Database
         type: port
         pod: pod-1
         leaf: 101
