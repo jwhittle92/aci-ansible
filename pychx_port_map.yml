@@ -1,0 +1,56 @@
+---
+- name: Create VLAN Pools
+  hosts: apic
+  connection: local
+  gather_facts: no
+
+  tasks:
+
+  - name: Create a Port Channel (PC) Interface Policy Group
+    cisco.aci.aci_interface_policy_leaf_policy_group:
+      host: "{{ inventory_hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+      lag_type: link
+      policy_group: port-channel
+      port_channel_policy: Jacob_LACP
+      aep: default
+      state: present
+    delegate_to: localhost
+    
+  - name: Associate an Interface Access Port Selector to an Interface Profile with a Policy Group
+    cisco.aci.aci_access_port_to_interface_policy_leaf_profile:
+      host: "{{ inventory_hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+      interface_profile: L101
+      access_port_selector: port_10
+      policy_group: Jacob_LACP
+      interface_type: "port_channel"
+
+  - name: Associate port block to leaf interface profile
+    cisco.aci.aci_access_port_block_to_access_port:
+      host: "{{ inventory_hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+      interface_profile: L101
+      access_port_selector: port_10
+      port_blk: port_10
+      from_port: 10
+      to_port: 10
+
+  - name: Deploy Static Path binding for EPG
+    cisco.aci.aci_static_binding_to_epg:
+      host: "{{ inventory_hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+      tenant: "{{ tenant }}"
+      ap: web_application
+      epg: web
+      encap_id: 10
+      deploy_immediacy: lazy
+      interface_mode: tagged
+      interface_type: port_channel
+      pod_id: 1
+      interface: 1/10
+      leafs: 101
