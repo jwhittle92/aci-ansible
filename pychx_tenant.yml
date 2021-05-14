@@ -1,0 +1,72 @@
+---
+- name: Create VLAN Pools
+  hosts: apic
+  connection: local
+  gather_facts: no
+
+  tasks:
+
+  - name: Add a new tenant
+    cisco.aci.aci_tenant:
+      host: "{{ inventory_hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+      tenant: Jacob
+      state: present
+    delegate_to: localhost
+
+  - name: Add a new tenant
+    cisco.aci.aci_vrf:
+      host: "{{ inventory_hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+      tenant: Jacob
+      vrf: production
+    delegate_to: localhost
+
+  - name: Add a new tenant
+    cisco.aci.aci_bd:
+      host: "{{ inventory_hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+      tenant: Jacob
+      vrf: production
+      bd: production_bd
+      state: present
+    delegate_to: localhost
+
+  - name: Add a new tenant
+    cisco.aci.aci_bd_subnet:
+      host: "{{ inventory_hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+      tenant: Jacob
+      vrf: production
+      bd: production_bd
+      gateway: 10.10.10.1
+      mask: 24
+      scope: [private]
+      state: present
+    delegate_to: localhost
+
+  - name: Add a new Application Profile
+    cisco.aci.aci_ap:
+      host: "{{ inventory_hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+      tenant: Jacob
+      ap: web_application
+      state: present
+    delegate_to: localhost
+
+  - name: Add a new tenant
+    cisco.aci.aci_epg:
+      host: "{{ inventory_hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+      tenant: Jacob
+      ap: web_application
+      epg: web
+      bd: production_bd
+      state: present
+    delegate_to: localhost
