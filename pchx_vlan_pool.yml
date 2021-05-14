@@ -27,5 +27,6 @@
       block_name: "Jacob_VLANs_Block"
       block_start: 10
       block_end: 20
+      pool_allocation_mode: static
       state: present
     delegate_to: localhost
