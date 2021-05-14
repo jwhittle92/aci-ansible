@@ -3,13 +3,11 @@
   hosts: aci
   connection: local
   gather_facts: false
-  vars_files:
-    creds.yml
 
   tasks:
   
   - name: create vlan pool
-    aci_vlan_pool:
+    cisco.aci.aci_vlan_pool:
       host: "{{ inventory_hostname }}"
       username: "{{ username }}"
       password: "{{ password }}"
@@ -19,7 +17,7 @@
       validate_certs: no
 
   - name: add vlan block
-    aci_vlan_pool_encap_block:
+    cisco.aci.aci_vlan_pool_encap_block:
       host: "{{ inventory_hostname }}"
       username: "{{ username }}"
       password: "{{ password }}"
