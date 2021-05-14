@@ -24,6 +24,7 @@
       username: "{{ username }}"
       password: "{{ password }}"
       pool: Jacob_VLANs
+      block_name: "Jacob_VLANs_Block"
       block_start: 10
       block_end: 20
       state: present
