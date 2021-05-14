@@ -44,7 +44,7 @@
       host: "{{ inventory_hostname }}"
       username: "{{ username }}"
       password: "{{ password }}"
-      tenant: "{{ tenant }}"
+      tenant: Jacob
       ap: web_application
       epg: web
       encap_id: 10
