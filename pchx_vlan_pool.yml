@@ -1,0 +1,19 @@
+---
+- name: Create VLAN Pools
+  hosts: apic
+  connection: local
+  gather_facts: no
+
+  tasks:
+
+
+  - name: Add a new VLAN pool
+    cisco.aci.aci_vlan_pool:
+      host: "{{ inventory_hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+      pool: Jacob_VLANs
+      pool_allocation_mode: static
+      description: Production VLANs
+      state: present
+    delegate_to: localhost
